@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="assets/img/product1.jpg" alt="Card image cap"
+                        <img class="card-img img-fluid" src="<?php echo BASE_URL . 'Assets/img/product1.jpg'; ?>" alt="Card image cap"
                             id="product-detail">
                     </div>
                     <div class="row">
@@ -29,19 +29,19 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/detail/detail1.jpg"
+                                                <img class="card-img img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail1.jpg'; ?>"
                                                     alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/detail/detail2.jpg"
+                                                <img class="card-img img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail2.jpg'; ?>"
                                                     alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/detail/detail3.jpg"
+                                                <img class="card-img img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail3.jpg'; ?>"
                                                     alt="Product Image 3">
                                             </a>
                                         </div>
@@ -54,19 +54,19 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/detail/detail4.jpg"
+                                                <img class="card-img img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail4.jpg'; ?>"
                                                     alt="Product Image 4">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/detail/detail5.jpg"
+                                                <img class="card-img img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail5.jpg'; ?>"
                                                     alt="Product Image 5">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/detail/detail6.jpg"
+                                                <img class="card-img img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail6.jpg'; ?>"
                                                     alt="Product Image 6">
                                             </a>
                                         </div>
@@ -156,7 +156,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail1.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail1.jpg'; ?>">
                             <div
                                 class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
@@ -202,7 +202,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail2.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail2.jpg'; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-util text-white" href="shop-single.html"><i class="fa fa-heart"></i></a>
@@ -243,7 +243,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail3.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail3.jpg'; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-util text-white" href="shop-single.html"><i class="fa fa-heart"></i></a>
@@ -284,7 +284,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail4.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail4.jpg'; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-util text-white" href="shop-single.html"><i class="fa fa-heart"></i></a>
@@ -325,7 +325,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail5.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail5.jpg'; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-util text-white" href="shop-single.html"><i class="fa fa-heart"></i></a>
@@ -366,7 +366,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail6.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail6.jpg'; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-util text-white" href="shop-single.html"><i class="fa fa-heart"></i></a>
@@ -407,7 +407,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail1.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail1.jpg'; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-util text-white" href="shop-single.html"><i class="fa fa-heart"></i></a>
@@ -448,7 +448,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="assets/img/detail/detail6.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets//img/detail/detail6.jpg'; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-util text-white" href="shop-single.html"><i class="fa fa-heart"></i></a>

@@ -24,7 +24,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product1.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product1.jpg'; ?> ">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -61,7 +61,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product2.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product2.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -98,7 +98,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product3.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product3.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -135,7 +135,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product1.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product1.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -172,7 +172,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product2.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product2.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -209,7 +209,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product3.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product3.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -246,7 +246,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product1.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product1.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -283,7 +283,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product2.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product2.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
@@ -320,7 +320,7 @@
                     <div class="col-md-3">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
-                                <img class="card-img rounded-0 img-fluid" src="assets/img/product3.jpg">
+                                <img class="card-img rounded-0 img-fluid" src="<?php echo BASE_URL . 'Assets/img/product3.jpg'; ?>">
                                 <div
                                     class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">

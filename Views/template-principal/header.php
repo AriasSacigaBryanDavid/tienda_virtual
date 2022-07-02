@@ -19,6 +19,8 @@
      <!-- Slick -->
      <link rel="stylesheet" type="text/css" href="assets/css/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="assets/css/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 </head>
 
@@ -53,8 +55,8 @@
   <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container d-flex justify-content-between align-items-center">
 
-      <a class="navbar-brand text-util logo h3 align-self-center" href="index.html">
-        Tienda Virtual
+      <a class="navbar-brand text-util logo h3 align-self-center" href="<?php echo BASE_URL; ?>">
+        <?php echo TITLE; ?>
       </a>
 
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
