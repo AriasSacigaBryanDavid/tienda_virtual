@@ -16,9 +16,16 @@
             $this->views->getView('principal', "about", $data);
         }
         // VISTA SHOP
-        public function shop()
+        public function shop($page)
         {
+            $pagina = (empty($page)) ? 1 : $page ;
+            $porPagina =20;
+            $desde = ($pagina -1) * $porPagina;
             $data['title'] = 'Nuestro Productos';
+            $data['productos'] = $this->model->getProductos($desde, $porPagina);
+            $data['pagina'] = $pagina;
+            $total = $this->model->getTotalProductos();
+            $data['total'] = ceil($total['total'] / $porPagina);
             $this->views->getView('principal', "shop", $data);
         }
         // VISTA DETAIL
