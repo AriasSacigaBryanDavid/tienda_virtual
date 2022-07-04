@@ -95,9 +95,9 @@
   <!-- End Footer -->
 
   <!-- Start Script -->
-  <script src="assets/js/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/templatemo.js"></script>
-  <script src="assets/js/all.min.js"></script>
+  <script src="<?php echo BASE_URL; ?>Assets/js/jquery-3.6.0.min.js"></script>
+  <script src="<?php echo BASE_URL; ?>Assets/js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="<?php echo BASE_URL; ?>Assets/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo BASE_URL; ?>Assets/js/templatemo.js"></script>
+  <script src="<?php echo BASE_URL; ?>Assets/js/all.min.js"></script>
   <!-- End Script -->

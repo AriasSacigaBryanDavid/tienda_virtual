@@ -90,18 +90,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-3 p-5 mt-3">
-        <a href="#"><img src="assets/img/categoria1.jpg" class="rounded-circle img-fluid border"></a>
-        <h5 class="text-center mt-3 mb-3">Watches</h5>
-      </div>
-      <div class="col-12 col-md-3 p-5 mt-3">
-        <a href="#"><img src="assets/img/categoria2.jpg" class="rounded-circle img-fluid border"></a>
-        <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
-      </div>
-      <div class="col-12 col-md-3 p-5 mt-3">
-        <a href="#"><img src="assets/img/categoria3.jpg" class="rounded-circle img-fluid border"></a>
-        <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
-      </div>
+      <?php foreach ($data['categorias'] as $categoria){ ?>
+        <div class="col-12 col-md-2 p-5 mt-3">
+          <a href="#"><img src="<?php echo $categoria['imagen']; ?>" class="rounded-circle img-fluid border"></a>
+          <h5 class="text-center mt-3 mb-3"><?php echo $categoria['categoria']; ?></h5>
+        </div>
+      <?php } ?>
     </div>
   </section>
   <!-- End Categories of The Month -->
@@ -119,10 +113,11 @@
         </div>
       </div>
       <div class="row">
+        <?php foreach ($data['nuevoProductos'] as $producto) { ?>
         <div class="col-12 col-md-4 mb-4">
           <div class="card h-100">
-            <a href="shop-single.html">
-              <img src="assets/img/product1.jpg" class="card-img-top" alt="...">
+            <a href="<?php echo  BASE_URL . 'principal/detail/' . $producto['id']; ?>">
+              <img src="<?php echo $producto['imagen']; ?>" class="card-img-top" alt="<?php echo $producto['nombre']; ?>">
             </a>
             <div class="card-body">
               <ul class="list-unstyled d-flex justify-content-between">
@@ -133,16 +128,16 @@
                   <i class="text-muted fa fa-star"></i>
                   <i class="text-muted fa fa-star"></i>
                 </li>
-                <li class="text-muted text-right">$240.00</li>
+                <li class="text-muted text-right"><?php echo MONEDA . ' ' . $producto['precio']; ?></li>
               </ul>
-              <a href="shop-single.html" class="h2 text-decoration-none text-dark">Gym Weight</a>
+              <a href="<?php echo  BASE_URL . 'principal/detail/' . $producto['id']; ?>" class="h2 text-decoration-none text-dark"><?php echo $producto['nombre']; ?></a>
               <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
+                <?php echo $producto['descripcion']; ?>
               </p>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4 mb-4">
+        <!-- <div class="col-12 col-md-4 mb-4">
           <div class="card h-100">
             <a href="shop-single.html">
               <img src="assets/img/product2.jpg" class="card-img-top" alt="...">
@@ -188,7 +183,8 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
+        <?php } ?>
       </div>
     </div>
   </section>
