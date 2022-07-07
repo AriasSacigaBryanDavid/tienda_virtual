@@ -9,14 +9,9 @@
                     <div class="col-md-12">
                         <ul class="list-inline shop-top-menu pb-3 pt-1">
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Todos</a>
+                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Productos</a>
                             </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Men's</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="#">Women's</a>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -66,21 +61,21 @@
                         <?php 
                             $anterior = $data['pagina'] - 1;
                             $siguiente = $data['pagina'] + 1;
-                            $url = BASE_URL . 'principal/shop/';
+                            $url = BASE_URL . 'principal/categorias/' . $data['id_categoria'];
                             if($data['pagina'] > 1){
                                 echo '<li class="page-item">
-                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="'. $url . $anterior.'"
+                                <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="'. $url . '/' . $anterior.'"
                                     >Anterior</a>
                                 </li>';
                             }
                             if ($data['total'] >= $siguiente) {
                                 echo '<li class="page-item">
                                 <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-white"
-                                    href="'. $url . $siguiente.'">Siguiente</a>
+                                    href="'. $url . '/' .$siguiente.'">Siguiente</a>
                                 </li>';
                             }
                         ?>
-                    </ul>
+                    </ul> 
                 </div>
             </div>
 
