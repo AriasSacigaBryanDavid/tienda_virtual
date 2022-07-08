@@ -73,5 +73,11 @@
             $data['title'] = 'Contactos';
             $this->views->getView('principal', "contact", $data);
         }
+        // VISTA LISTA DESEOS
+        public function deseo()
+        {
+            $data['title'] = 'Tu lista de deseos';
+            $this->views->getView('principal', "deseo", $data);
+        }
     }
 ?>
