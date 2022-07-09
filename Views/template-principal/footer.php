@@ -101,6 +101,9 @@
   <script src="<?php echo BASE_URL; ?>Assets/js/templatemo.js"></script>
   <script src="<?php echo BASE_URL; ?>Assets/js/all.min.js"></script>
   <script src="<?php echo BASE_URL; ?>Assets/js/sweetalert2.all.min.js"></script>
+  <script>
+    const base_url = '<?php echo BASE_URL; ?>';
+  </script>
   <script src="<?php echo BASE_URL; ?>Assets/js/carrito.js"></script>
 
   <!-- End Script -->
