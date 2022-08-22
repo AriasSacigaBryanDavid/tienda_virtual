@@ -107,13 +107,13 @@
                             <p><?php echo $data['producto']['descripcion']; ?></p>
 
                             <form action="" method="GET">
-                                <input type="hidden" name="product-title" value="Activewear">
+                                <input type="hidden" id="idProducto" value="<?php echo $data['producto']['id']; ?>" >
                                 <div class="row">
                                     <div class="col-auto">
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item text-right">
                                                 Cantidad
-                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                                <input type="hidden" id="product-quanity" value="1">
                                             </li>
                                             <li class="list-inline-item"><span class="badge btn-util" id="btn-minus">-</span></li>
                                             <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
@@ -127,8 +127,7 @@
                                             value="buy">Comprar</button>
                                     </div>
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-util btn-lg" name="submit"
-                                            value="addtocard">Añadir</button>
+                                        <button type="button" class="btn btn-util btn-lg" id="btnAddCart" >Añadir</button>
                                     </div>
                                 </div>
                             </form>
@@ -202,7 +201,7 @@
 
 
     <?php include_once 'Views/template-principal/footer.php'; ?>
-    
+    <script src="<?php echo BASE_URL; ?>Assets/js/modulos/detail.js"></script>
 
     <!-- Start Slider Script -->
     <script src="<?php echo BASE_URL; ?>Assets/css/slick/slick.min.js"></script>

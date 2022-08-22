@@ -41,11 +41,11 @@ class PrincipalModel extends Query{
         return $this->selectAll($sql);
     }
     // OBTENER PRODUCTO A PARTIR DE LA LISTA DE DESEOS
-    public function getListaDeseo($id_producto)
-    {
-        $sql = "SELECT * FROM productos WHERE id = $id_producto";
-        return $this->select($sql);
-    }
+    // public function getListaDeseo($id_producto)
+    // {
+    //     $sql = "SELECT * FROM productos WHERE id = $id_producto";
+    //     return $this->select($sql);
+    // }
 }
  
 ?>
