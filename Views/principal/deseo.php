@@ -14,20 +14,22 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body shadow-lg">
-                    <table class="table table-borderer table-striped table-hover" id="tableListaDeseo" style="width: 100%;">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Producto</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-borderer table-striped table-hover align-middle" id="tableListaDeseo" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,7 +39,7 @@
 
 <?php include_once 'Views/template-principal/footer.php'; ?>
 
-<script src="<?php echo BASE_URL . 'Assets/js/modulos/listaDeseo.js'?>"></script>
+<script src="<?php echo BASE_URL . 'Assets/js/modulos/listaDeseo.js' ?>"></script>
 </body>
 
 </html>
