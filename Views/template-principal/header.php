@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="<?php echo BASE_URL; ?>Assets/favicon/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="<?php echo BASE_URL; ?>Assets/favicon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo BASE_URL; ?>Assets/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo BASE_URL; ?>Assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="<?php echo BASE_URL; ?>Assets/favicon/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BASE_URL; ?>Assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="<?php echo BASE_URL; ?>Assets/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BASE_URL; ?>Assets/favicon/favicon-16x16.png">
@@ -34,16 +34,15 @@
   <link rel="stylesheet" href="<?php echo BASE_URL . 'Assets/css/templatemo.css'; ?> ">
 
   <!-- Load fonts style after rendering the layout styles -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
 
-     <!-- Slick -->
-    <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'Assets/css/slick/slick.css'; ?> ">
-    <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'Assets/css/slick/slick-theme.css'; ?> ">
+  <!-- Slick -->
+  <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'Assets/css/slick/slick.css'; ?> ">
+  <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'Assets/css/slick/slick-theme.css'; ?> ">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -81,24 +80,21 @@
         <?php echo TITLE; ?>
       </a>
 
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-        data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
-        id="templatemo_main_nav">
+      <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
         <div class="flex-fill">
           <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo BASE_URL . 'principal/about'?>">Servicios</a>
+              <a class="nav-link" href="<?php echo BASE_URL . 'principal/about' ?>">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo BASE_URL . 'principal/shop'?>">Tienda</a>
+              <a class="nav-link" href="<?php echo BASE_URL . 'principal/shop' ?>">Tienda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo BASE_URL . 'principal/contact'?>">Contactos</a>
+              <a class="nav-link" href="<?php echo BASE_URL . 'principal/contact' ?>">Contactos</a>
             </li>
           </ul>
         </div>
@@ -118,11 +114,11 @@
             <i class="fas fa-fw fa-cart-arrow-down text-dark mr-1"></i>
             <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-white" id="btnCantidadCarrito">0</span>
           </a>
-          <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'principal/deseo'?>">
+          <a class="nav-icon position-relative text-decoration-none" href="<?php echo BASE_URL . 'principal/deseo' ?>">
             <i class="fas fa-fw fa-heart text-dark mr-1"></i>
             <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-white" id="btnCantidadDeseo">0</span>
           </a>
-          <a class="nav-icon position-relative text-decoration-none" href="#">
+          <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">
             <i class="fas fa-fw fa-user text-dark mr-3"></i>
             <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-util text-white"></span>
           </a>
@@ -134,8 +130,7 @@
   <!-- Close Header -->
 
   <!-- Modal -->
-  <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="w-100 pt-1 mb-5 text-right">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

@@ -20,20 +20,67 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+
             </tbody>
           </table>
         </div>
       </div>
       <div class="modal-footer">
         <h3 id="totalGeneral"></h3>
+        <a class="btn btn-outline-primary" href="<?php echo BASE_URL . 'clientes'; ?>">Procesar Pedido</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Directo -->
+<div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="titleLogin">Iniciar Sesión</h5>
+        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body m-3">
+        <form method="get" action="">
+          <div class="text-center">
+            <img class="img-thumbnail rounded-circle" src="<?php echo BASE_URL . 'assets/img/logo.png'; ?>" alt="" width="100">
+          </div>
+          <div class="row">
+            <div class="col-md-12" id="frmLogin">
+              <!-- formulario de login -->
+              <div class="form-group mb-3">
+                <label for="correoLogin"><i class="fas fa-envelope"></i> Correo</label>
+                <input id="correoLogin" class="form-control" type="text" name="correoLogin" placeholder="Correo Electrónico">
+              </div>
+              <div class="form-group mb-3">
+                <label for="contrasenaLogin"><i class="fas fa-key"></i> Contraseña</label>
+                <input id="contrasenaLogin" class="form-control" type="text" name="contrasenaLogin" placeholder="Contraseña">
+              </div>
+            </div>
+            <div class="col-md-12 d-none">
+              <!-- formulario de registro -->
+              <div class="form-group mb-3">
+                <label for="nombreRegistro"><i class="fas fa-list"></i> Nombre Completo</label>
+                <input id="nombreRegistro" class="form-control" type="text" name="nombreRegistro" placeholder="Correo Electrónico">
+              </div>
+              <div class="form-group mb-3">
+                <label for="correoRegistro"><i class="fas fa-envelope"></i> Correo</label>
+                <input id="correoRegistro" class="form-control" type="text" name="correoRegistro" placeholder="Correo Electrónico">
+              </div>
+              <div class="form-group mb-3">
+                <label for="contrasenaRegistro"><i class="fas fa-key"></i> Contraseña</label>
+                <input id="contrasenaRegistro" class="form-control" type="text" name="contrasenaRegistro" placeholder="Contraseña">
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Login</button>
+        <button class="btn btn-danger" type="button">Registrarse</button>
       </div>
     </div>
   </div>

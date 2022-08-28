@@ -103,7 +103,7 @@ function cantidadCarrito() {
 
 //ver carrito
 function getListaCarrito() {
-  const url = base_url + "principal/listaCarrito";
+  const url = base_url + "principal/listaProductos";
   const http = new XMLHttpRequest();
   http.open("POST", url, true);
   http.send(JSON.stringify(listaCarrito));
@@ -124,7 +124,7 @@ function getListaCarrito() {
                         <td><span class="badge bg-info">${
                           producto.cantidad
                         }</span></td>
-                        <td>${producto.subTotal}</td>
+                        <td>${res.moneda + " " + producto.subTotal}</td>
                         <td><button class="btn btn-danger btnDeletecart" type="button" prod="${
                           producto.id
                         }"><i class="fas fa-times-circle"></i></button></td>
@@ -133,7 +133,8 @@ function getListaCarrito() {
                 `;
       });
       tableListaCarrito.innerHTML = html;
-      document.querySelector("#totalGeneral").textContent = res.total;
+      document.querySelector("#totalGeneral").textContent =
+        "MONTO TOTAL:" + "  " + res.moneda + " " + res.total;
       btnEliminarCarrito();
     }
   };
