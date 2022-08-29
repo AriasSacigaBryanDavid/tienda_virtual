@@ -58,12 +58,16 @@
                 <label for="contrasenaLogin"><i class="fas fa-key"></i> Contraseña</label>
                 <input id="contrasenaLogin" class="form-control" type="text" name="contrasenaLogin" placeholder="Contraseña">
               </div>
+              <a href="#" id="btnRegister">¿Todavia no tienes una cuenta?</a>
+              <div class="float-end">
+                <button class="btn btn-primary btn_lg" type="button">Login</button>
+              </div>
             </div>
-            <div class="col-md-12 d-none">
+            <div class="col-md-12 d-none" id="frmRegister">
               <!-- formulario de registro -->
               <div class="form-group mb-3">
                 <label for="nombreRegistro"><i class="fas fa-list"></i> Nombre Completo</label>
-                <input id="nombreRegistro" class="form-control" type="text" name="nombreRegistro" placeholder="Correo Electrónico">
+                <input id="nombreRegistro" class="form-control" type="text" name="nombreRegistro" placeholder="Nombre Completo">
               </div>
               <div class="form-group mb-3">
                 <label for="correoRegistro"><i class="fas fa-envelope"></i> Correo</label>
@@ -73,15 +77,16 @@
                 <label for="contrasenaRegistro"><i class="fas fa-key"></i> Contraseña</label>
                 <input id="contrasenaRegistro" class="form-control" type="text" name="contrasenaRegistro" placeholder="Contraseña">
               </div>
+              <a href="#" id="btnLogin">Ya tienes una cuenta.</a>
+              <div class="float-end">
+                <button class="btn btn-primary btn_lg" type="button" id="registrarse">Registrarse</button>
+              </div>
             </div>
           </div>
 
         </form>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" type="button">Login</button>
-        <button class="btn btn-danger" type="button">Registrarse</button>
-      </div>
+
     </div>
   </div>
 </div>
@@ -192,5 +197,7 @@
   const base_url = '<?php echo BASE_URL; ?>';
 </script>
 <script src="<?php echo BASE_URL; ?>Assets/js/carrito.js"></script>
+<script src="<?php echo BASE_URL; ?>Assets/js/login.js"></script>
+
 
 <!-- End Script -->
