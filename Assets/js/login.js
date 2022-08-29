@@ -23,25 +23,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // Registrarse
   registrarse.addEventListener("click", function () {
-    let formData = new FormData();
-    formData.append("nombre", nombreRegistro.value);
-    formData.append("correo", correoRegistro.value);
-    formData.append("contrasena", contrasenaRegistro.value);
-    const url = base_url + "clientes/registroDirecto";
-    const http = new XMLHttpRequest();
-    http.open("POST", url, true);
-    http.send(formData);
-    http.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        const res = JSON.parse(this.responseText);
-        Swal.fire("Aviso", res.msg, res.icono);
-        if (res.icono == "success") {
-          setTimeout(() => {
-            enviarCorreo(correoRegistro.value, res.token);
-          }, 2000);
+    if (
+      nombreRegistro.value == "" ||
+      correoRegistro.value == "" ||
+      contrasenaRegistro.value == ""
+    ) {
+      Swal.fire("Aviso", "Todos los campos son obligatorio", "warning");
+    } else {
+      let formData = new FormData();
+      formData.append("nombre", nombreRegistro.value);
+      formData.append("correo", correoRegistro.value);
+      formData.append("contrasena", contrasenaRegistro.value);
+      const url = base_url + "clientes/registroDirecto";
+      const http = new XMLHttpRequest();
+      http.open("POST", url, true);
+      http.send(formData);
+      http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          const res = JSON.parse(this.responseText);
+          Swal.fire("Aviso", res.msg, res.icono);
+          if (res.icono == "success") {
+            setTimeout(() => {
+              enviarCorreo(correoRegistro.value, res.token);
+            }, 2000);
+          }
         }
-      }
-    };
+      };
+    }
   });
 });
 
