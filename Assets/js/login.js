@@ -1,14 +1,24 @@
 // variables de la funcion de ocultar y mostrar formulario
 const btnRegister = document.querySelector("#btnRegister");
 const btnLogin = document.querySelector("#btnLogin");
+
 const frmLogin = document.querySelector("#frmLogin");
-const frmRegister = document.querySelector("#frmRegister");
-const registrarse = document.querySelector("#registrarse");
 
 // variables de la funcion registrarse
+const frmRegister = document.querySelector("#frmRegister");
+const registrarse = document.querySelector("#registrarse");
 const nombreRegistro = document.querySelector("#nombreRegistro");
 const correoRegistro = document.querySelector("#correoRegistro");
 const contrasenaRegistro = document.querySelector("#contrasenaRegistro");
+
+//variable de la funcion login
+const login = document.querySelector("#login");
+const correoLogin = document.querySelector("#correoLogin");
+const contrasenaLogin = document.querySelector("#contrasenaLogin");
+
+//btn modal de login
+// const btnModalLogin = document.querySelector("#btnModalLogin");
+const modalLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
 
 document.addEventListener("DOMContentLoaded", function () {
   // mostrar formulario resgistro y ocultar login
@@ -51,6 +61,37 @@ document.addEventListener("DOMContentLoaded", function () {
       };
     }
   });
+  //login Directo
+  login.addEventListener("click", function () {
+    if (correoLogin.value == "" || contrasenaLogin.value == "") {
+      Swal.fire("Aviso", "Todos los campos son obligatorio", "warning");
+    } else {
+      let formData = new FormData();
+      formData.append("correoLogin", correoLogin.value);
+      formData.append("contrasenaLogin", contrasenaLogin.value);
+      const url = base_url + "clientes/loginDirecto";
+      const http = new XMLHttpRequest();
+      http.open("POST", url, true);
+      http.send(formData);
+      http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText);
+
+          const res = JSON.parse(this.responseText);
+          Swal.fire("Aviso", res.msg, res.icono);
+          if (res.icono == "success") {
+            setTimeout(() => {
+              window.location.reload();
+            }, 2000);
+          }
+        }
+      };
+    }
+  });
+  //modal Login
+  // btnModalLogin.addEventListener("click", function () {
+  //   modalLogin.show();
+  // });
 });
 
 function enviarCorreo(correo, token) {
@@ -72,4 +113,9 @@ function enviarCorreo(correo, token) {
       }
     }
   };
+}
+
+function abrirModalLogin() {
+  myModal.hide();
+  modalLogin.show();
 }

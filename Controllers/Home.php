@@ -1,17 +1,17 @@
 <?php
-    class Home extends Controller
+class Home extends Controller
+{
+    public function __construct()
     {
-        public function __construct() {
-            parent::__construct();
-            session_start();
-        }
-        public function index()
-        {
-            $data['title'] = 'Pagina Principal';
-            $data['categorias'] = $this->model->getCategorias();
-            $data['nuevoProductos'] = $this->model->getNuevosProductos();
-            $this->views->getView('home', "index", $data);
-        }
-        
+        parent::__construct();
+        session_start();
+        // session_destroy();    // Es para borrar la seecion cuando no aun un boton de cerrar seccion
     }
-?>
+    public function index()
+    {
+        $data['title'] = 'Pagina Principal';
+        $data['categorias'] = $this->model->getCategorias();
+        $data['nuevoProductos'] = $this->model->getNuevosProductos();
+        $this->views->getView('home', "index", $data);
+    }
+}
