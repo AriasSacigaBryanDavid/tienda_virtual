@@ -104,7 +104,6 @@ class Clientes extends Controller
             header('Location: ' . BASE_URL . 'clientes');
         }
     }
-
     // logindirecto
     public function loginDirecto()
     {
@@ -129,6 +128,26 @@ class Clientes extends Controller
             }
             echo json_encode($mensaje, JSON_UNESCAPED_UNICODE);
             die();
+        }
+    }
+    //registrar pedido
+    public function registrarPedido()
+    {
+        $datos = file_get_contents('php://input');
+        $json = json_decode($datos, true);
+        if (is_array($json)) {
+            $id_transaccion = $json['id'];
+            $monto = $json['purchase_units'][0]['amount']['value'];
+            $estado = $json['status'];
+            $fecha = date('Y-m-d H:i:s');
+            $email = $json['payer']['email_address'];
+            $nombre = $json['payer']['name']['given_name'];
+            $apellido = $json['payer']['name']['surname'];
+            $direccion = $json['purchase_units'][0]['shipping']['address']['address_line_1'];
+            $ciudad = $json['purchase_units'][0]['shipping']['address']['admin_area_2'];
+            $email_user = $_SESSION['correoCliente'];
+            $data = $this->model->registrarPedido($id_transaccion, $monto, $estado, $fecha, $email, $nombre, $apellido, $direccion, $ciudad, $email_user);
+            print_r($data);
         }
     }
 }
