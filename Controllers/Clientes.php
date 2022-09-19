@@ -135,19 +135,34 @@ class Clientes extends Controller
     {
         $datos = file_get_contents('php://input');
         $json = json_decode($datos, true);
-        if (is_array($json)) {
-            $id_transaccion = $json['id'];
-            $monto = $json['purchase_units'][0]['amount']['value'];
-            $estado = $json['status'];
+        $pedidos = $json['pedidos'];
+        $productos = $json['productos'];
+        if (is_array($pedidos) && is_array($productos)) {
+            $id_transaccion = $pedidos['id'];
+            $monto = $pedidos['purchase_units'][0]['amount']['value'];
+            $estado = $pedidos['status'];
             $fecha = date('Y-m-d H:i:s');
-            $email = $json['payer']['email_address'];
-            $nombre = $json['payer']['name']['given_name'];
-            $apellido = $json['payer']['name']['surname'];
-            $direccion = $json['purchase_units'][0]['shipping']['address']['address_line_1'];
-            $ciudad = $json['purchase_units'][0]['shipping']['address']['admin_area_2'];
+            $email = $pedidos['payer']['email_address'];
+            $nombre = $pedidos['payer']['name']['given_name'];
+            $apellido = $pedidos['payer']['name']['surname'];
+            $direccion = $pedidos['purchase_units'][0]['shipping']['address']['address_line_1'];
+            $ciudad = $pedidos['purchase_units'][0]['shipping']['address']['admin_area_2'];
             $email_user = $_SESSION['correoCliente'];
             $data = $this->model->registrarPedido($id_transaccion, $monto, $estado, $fecha, $email, $nombre, $apellido, $direccion, $ciudad, $email_user);
-            print_r($data);
+
+            if ($data > 0) {
+                foreach ($productos as $producto) {
+                    $temp = $this->model->getProducto($producto['idProducto']);
+                    $this->model->registrarDetalle($temp['nombre'], $temp['precio'], $producto['cantidad'], $data);
+                }
+                $mensaje = array('msg' => 'Pedido registrado con exito', 'icono' => 'success');
+            } else {
+                $mensaje = array('msg' => 'Error al registrar el pedido', 'icono' => 'error');
+            }
+        } else {
+            $mensaje = array('msg' => 'Error fatal con los datos', 'icono' => 'error');
         }
+        echo json_encode($mensaje);
+        die();
     }
 }

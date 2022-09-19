@@ -5,6 +5,7 @@ class PrincipalModel extends Query{
     {
         parent::__construct();
     }
+    //productos
     public function getProducto($id_producto)
     {
         $sql = "SELECT P.*, c.categoria FROM productos p INNER JOIN categorias c ON p.id_categoria = c.id WHERE p.id = $id_producto";
@@ -47,5 +48,3 @@ class PrincipalModel extends Query{
     //     return $this->select($sql);
     // }
 }
- 
-?>
