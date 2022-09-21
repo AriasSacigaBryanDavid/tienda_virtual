@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
       dataSrc: "",
     },
     columns: [{ data: "id_transaccion" }, { data: "monto" }, { data: "fecha" }],
+    language,
+    dom,
+    buttons,
   });
 });
 
