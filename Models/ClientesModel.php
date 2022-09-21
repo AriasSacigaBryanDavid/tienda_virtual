@@ -70,4 +70,9 @@ class ClientesModel extends Query
         }
         return $res;
     }
+    public function getPedidos($proceso)
+    {
+        $sql = "SELECT * FROM pedidos WHERE proceso = $proceso";
+        return $this->selectAll($sql);
+    }
 }
