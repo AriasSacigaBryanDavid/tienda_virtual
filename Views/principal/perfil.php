@@ -96,6 +96,7 @@
                                             <th>#</th>
                                             <th>Monto</th>
                                             <th>Fecha</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -122,6 +123,69 @@
 
 </div>
 <!-- End Content -->
+
+<!-- modal de pedidos -->
+<div id="modalPedido" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Estado del Pedido</h5>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-md-6 col-lg-4 pb-5">
+                        <div class="h-100 py-5 services-icon-wap shadow">
+                            <div class="h1 text-util text-center"><i class="fa fa-truck fa-lg"></i></div>
+                            <h2 class="h5 mt-4 text-center">Enviado</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 pb-5">
+                        <div class="h-100 py-5 services-icon-wap shadow">
+                            <div class="h1 text-util text-center"><i class="fa fa-exchange-alt"></i></div>
+                            <!-- <div class="h1 text-util text-center"><i class='fa fa-rotate'></i></div> -->
+                            <h2 class="h5 mt-4 text-center">Proceso</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 pb-5">
+                        <div class="h-100 py-5 services-icon-wap shadow">
+                            <div class="h1 text-util text-center"><i class="fa fa-percent"></i></div>
+                            <h2 class="h5 mt-4 text-center">Completado</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-borderer table-striped table-hover align-middle" id="tablePedidos" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6 col-lg-3 pb-5">
+                        <div class="h-100 py-5 services-icon-wap shadow">
+                            <div class="h1 text-util text-center"><i class="fa fa-user"></i></div>
+                            <h2 class="h5 mt-4 text-center">24 Hours Service</h2>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include_once 'Views/template-principal/footer.php'; ?>
 <script type="text/javascript" src="<?php echo BASE_URL . 'Assets/DataTables/datatables.min.js' ?>"></script>
