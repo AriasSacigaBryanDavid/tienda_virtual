@@ -20,6 +20,7 @@ class Clientes extends Controller
         if (empty($_SESSION['correoCliente'])) {
             header('Location: ' . BASE_URL);
         }
+        $data['perfil'] = 'si';
         $data['title'] = 'Tu Perfil';
         $data['verificar'] = $this->model->getVerificar($_SESSION['correoCliente']);
         $this->views->getView('principal', "perfil", $data);
@@ -185,5 +186,11 @@ class Clientes extends Controller
         $data['moneda'] = MONEDA;
         echo json_encode($data);
         die();
+    }
+    //funcion de salir session
+    public function salir()
+    {
+        session_destroy();
+        header('Location: ' . BASE_URL);
     }
 }
