@@ -1,17 +1,6 @@
-<!--
-=========================================================
-* Argon Dashboard 2 - v2.0.4
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+<!-- sirve para encriptar password -->
+<!-- <//?php echo password_hash('admin', PASSWORD_DEFAULT);
+exit; ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,19 +39,19 @@
                                     <p class="mb-0">Ingrese su correo electrónico y contraseña para iniciar sesión</p>
                                 </div>
                                 <div class="card-body">
-                                    <form role="form">
+                                    <form role="form" id="frm_login">
                                         <div class="mb-3">
-                                            <input type="email" class="form-control form-control-lg" placeholder="Correo Electronico" aria-label="Correo">
+                                            <input type="email" id="email" name="email" value="bryanASXD@gmail.com" class="form-control form-control-lg" placeholder="Correo Electronico" aria-label="Correo">
                                         </div>
                                         <div class="mb-3">
-                                            <input type="email" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Contraseña">
+                                            <input type="password" id="password" name="password" value="admin" class="form-control form-control-lg" placeholder="Contraseña" aria-label="Contraseña">
                                         </div>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" id="rememberMe">
                                             <label class="form-check-label" for="rememberMe">Recordar sesión</label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="button" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Acceso</button>
+                                            <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Acceso</button>
                                         </div>
                                     </form>
                                 </div>
@@ -109,6 +98,7 @@
     <script>
         const base_url = '<?php echo BASE_URL; ?>';
     </script>
+    <script src="<?php echo BASE_URL; ?>Assets/js/sweetalert2.all.min.js"></script>
     <script src="<?php echo BASE_URL; ?>Assets/js/modulos/login.js"></script>
 
 </body>
