@@ -18,12 +18,28 @@ class Admin extends Controller
             if (empty($_POST['email']) || empty($_POST['password'])) {
                 $respuesta = array('msg' => 'Todo los campos son requeridos', 'icono' => 'warning');
             } else {
-                # code...
+                $data = $this->model->getUsuario($_POST['email']);
+                if (empty($data)) {
+                    $respuesta = array('msg' => 'El correo electrónico no existe', 'icono' => 'warning');
+                } else {
+                    if (password_verify($_POST['password'], $data['contrasena'])) {
+                        $_SESSION['email'] = $data['correo'];
+                        $respuesta = array('msg' => 'Datos correcto', 'icono' => 'success');
+                    } else {
+                        $respuesta = array('msg' => 'Contraseña Incorrecta', 'icono' => 'warning');
+                    }
+                }
             }
         } else {
             $respuesta = array('msg' => 'Error fatal', 'icono' => 'error');
         }
-        echo json_encode($respuesta);
+        echo json_encode($respuesta, JSON_UNESCAPED_UNICODE);
         die();
+    }
+
+    public function home()
+    {
+        $data['title'] = 'Panel Administrativo';
+        $this->views->getView('admin/administracion', "index", $data);
     }
 }
