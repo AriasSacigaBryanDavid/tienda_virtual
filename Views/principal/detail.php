@@ -1,4 +1,5 @@
-<?php include_once 'Views/template-principal/header.php'; ?>
+<?php include_once 'Views/template/header-principal.php'; ?>
+
 
 <!-- Open Content -->
 <section class="bg-light">
@@ -186,7 +187,8 @@
 <!-- End Article -->
 
 
-<?php include_once 'Views/template-principal/footer.php'; ?>
+<?php include_once 'Views/template/footer-principal.php'; ?>
+
 <script src="<?php echo BASE_URL; ?>Assets/js/modulos/detail.js"></script>
 
 <!-- Start Slider Script -->

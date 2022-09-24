@@ -202,7 +202,6 @@
 </script>
 <script src="<?php echo BASE_URL; ?>Assets/js/carrito.js"></script>
 <script src="<?php echo BASE_URL; ?>Assets/js/login.js"></script>
-<script src="<?php echo BASE_URL; ?>Assets/js/es-ES.js"></script>
 
 
 
