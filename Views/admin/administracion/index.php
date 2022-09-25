@@ -559,5 +559,7 @@
 
         
 
+<script src="<?php echo BASE_URL; ?>Assets/admin/src/plugins/src/apex/apexcharts.min.js"></script>
+
 
 <?php include_once 'Views/template/footer-admin.php' ?>

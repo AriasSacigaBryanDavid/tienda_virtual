@@ -29,6 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// function alertas(msg, icono) {
+//   Swal.fire("Aviso", msg.toUpperCase(), icono);
+// }
 function alertas(msg, icono) {
-  Swal.fire("Aviso", msg.toUpperCase(), icono);
+    Swal.fire({
+        icon: icono,
+        title: msg.toUpperCase(),
+    })
+
 }
