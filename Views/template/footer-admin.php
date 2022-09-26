@@ -69,9 +69,9 @@
 <!--  END CUSTOM SCRIPT FILE  -->
 
 <!-- BEGIN THEME GLOBAL STYLE -->
-<script src="<?php echo BASE_URL; ?>Assets/admin/src/assets/js/scrollspyNav.js"></script>
+<!-- <script src="<//?php echo BASE_URL; ?>Assets/admin/src/assets/js/scrollspyNav.js"></script> -->
 <script src="<?php echo BASE_URL; ?>Assets/admin/src/plugins/src/sweetalerts2/sweetalerts2.min.js"></script>
-<script src="<?php echo BASE_URL; ?>Assets/admin/src/plugins/src/sweetalerts2/custom-sweetalert.js"></script>
+<!-- <script src="<//?php echo BASE_URL; ?>Assets/admin/src/plugins/src/sweetalerts2/custom-sweetalert.js"></script> -->
 <!-- END THEME GLOBAL STYLE -->
 </body>
 

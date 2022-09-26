@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       { data: "apellidos" },
       { data: "correo" },
       { data: "perfil" },
+      { data: "accion" },
     ],
     dom:
       "<'dt--top-section'<'row'<'col-sm-12 col-md-6 d-flex justify-content-md-start justify-content-center'B><'col-sm-12 col-md-6 d-flex justify-content-md-end justify-content-center mt-md-0 mt-3'f>>>" +
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //abrir modal para registrar usuarios
   agregar_usuario.addEventListener("click", function () {
-    titleUsuario.textContent = 'Registrar Usuario';
+    titleUsuario.textContent = "Registrar Usuario";
     $("#usuarioModal").modal("show");
   });
 
@@ -81,11 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (this.readyState == 4 && this.status == 200) {
         //   console.log(this.responseText);
         const res = JSON.parse(this.responseText);
-        if (res.icono == 'success') {
+        if (res.icono == "success") {
           frm.reset();
           tblUsuarios.ajax.reload();
           $("#usuarioModal").modal("hide");
-
         }
         alertas(res.msg, res.icono);
       }
@@ -93,11 +93,40 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 function alertas(msg, icono) {
   Swal.fire({
-      icon: icono,
-      title: msg.toUpperCase(),
-  })
+    icon: icono,
+    title: msg.toUpperCase(),
+  });
+}
 
+function eliminarUser($idUser) {
+  Swal.fire({
+    title: "¿Está seguro?",
+    text: "¡No podrás revertir esto!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, Eliminar!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const url = base_url + "Usuarios/delete/" + $idUser;
+      const http = new XMLHttpRequest();
+      http.open("GET", url, true);
+      http.send();
+      http.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          //   console.log(this.responseText);
+          const res = JSON.parse(this.responseText);
+          if (res.icono == "success") {
+            tblUsuarios.ajax.reload();
+          }
+          // Swal.fire("¡Eliminado!", "Su archivo ha sido eliminado.", "success");
+          Swal.fire("¡Aviso!", res.msg.toUpperCase(), res.icono);
+        }
+      };
+      
+    }
+  });
 }
