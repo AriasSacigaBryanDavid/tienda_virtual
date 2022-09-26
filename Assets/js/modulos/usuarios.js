@@ -1,3 +1,7 @@
+const agregar_usuario = document.querySelector("#registrar_usuario");
+const frm = document.querySelector("#frmRegistro");
+const titleUsuario = document.querySelector("#titleUsuario");
+let tblUsuarios;
 document.addEventListener("DOMContentLoaded", function () {
   //carga datos usuarios con DataTables
   // $("#tblUsuarios").DataTable({
@@ -17,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //   buttons,
   // });
 
-  $("#tblUsuarios").DataTable({
+  tblUsuarios = $("#tblUsuarios").DataTable({
     ajax: {
       url: base_url + "Usuarios/listar",
       dataSrc: "",
@@ -38,8 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { extend: "copy", className: "btn" },
         { extend: "csv", className: "btn" },
         { extend: "excel", className: "btn" },
-        { extend: "print", className: "btn" }       
-        
+        { extend: "print", className: "btn" },
       ],
     },
     oLanguage: {
@@ -59,4 +62,42 @@ document.addEventListener("DOMContentLoaded", function () {
     lengthMenu: [7, 10, 20, 50],
     pageLength: 10,
   });
+
+  //abrir modal para registrar usuarios
+  agregar_usuario.addEventListener("click", function () {
+    titleUsuario.textContent = 'Registrar Usuario';
+    $("#usuarioModal").modal("show");
+  });
+
+  //formulario submit usuarios
+  frm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let data = new FormData(this);
+    const url = base_url + "Usuarios/registrar";
+    const http = new XMLHttpRequest();
+    http.open("POST", url, true);
+    http.send(data);
+    http.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        //   console.log(this.responseText);
+        const res = JSON.parse(this.responseText);
+        if (res.icono == 'success') {
+          frm.reset();
+          tblUsuarios.ajax.reload();
+          $("#usuarioModal").modal("hide");
+
+        }
+        alertas(res.msg, res.icono);
+      }
+    };
+  });
 });
+
+
+function alertas(msg, icono) {
+  Swal.fire({
+      icon: icono,
+      title: msg.toUpperCase(),
+  })
+
+}

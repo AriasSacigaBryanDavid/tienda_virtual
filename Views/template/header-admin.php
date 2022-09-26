@@ -16,7 +16,14 @@
     <link href="<?php echo BASE_URL; ?>Assets/admin/src/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo BASE_URL; ?>Assets/admin/layouts/vertical-dark-menu/css/light/plugins.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo BASE_URL; ?>Assets/admin/layouts/vertical-dark-menu/css/dark/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/light/authentication/auth-boxed.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/dark/authentication/auth-boxed.css" rel="stylesheet" type="text/css" />
+
     <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/plugins/src/animate/animate.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <!-- <link href="<//?php echo BASE_URL; ?>Assets/admin/src/plugins/src/apex/apexcharts.css" rel="stylesheet" type="text/css"> -->
@@ -33,7 +40,27 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>Assets/admin/src/plugins/css/dark/table/datatable/custom_dt_miscellaneous.css">
     <!-- END PAGE LEVEL STYLES -->
 
+    <!--  BEGIN CUSTOM STYLE FILE  -->
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/light/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/light/components/carousel.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/light/components/modal.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/light/components/tabs.css" rel="stylesheet" type="text/css">
+    
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/dark/components/carousel.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/dark/components/modal.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/assets/css/dark/components/tabs.css" rel="stylesheet" type="text/css">
+    <!--  END CUSTOM STYLE FILE  -->
    
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>Assets/admin/src/plugins/src/sweetalerts2/sweetalerts2.css">
+    
+    <!-- <link href="<//?php echo BASE_URL; ?>Assets/admin/src/assets/css/light/scrollspyNav.css" rel="stylesheet" type="text/css" /> -->
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/plugins/css/light/sweetalerts2/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+
+    <!-- <link href="<//?php echo BASE_URL; ?>Assets/admin/src/assets/css/dark/scrollspyNav.css" rel="stylesheet" type="text/css" /> -->
+    <link href="<?php echo BASE_URL; ?>Assets/admin/src/plugins/css/dark/sweetalerts2/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
 </head>
 
 <body class="layout-boxed">
