@@ -1,6 +1,7 @@
 const agregar_usuario = document.querySelector("#registrar_usuario");
 const frm = document.querySelector("#frmRegistro");
 const titleUsuario = document.querySelector("#titleUsuario");
+const btnAccion = document.querySelector("#btnAccion");
 let tblUsuarios;
 document.addEventListener("DOMContentLoaded", function () {
   //carga datos usuarios con DataTables
@@ -66,7 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //abrir modal para registrar usuarios
   agregar_usuario.addEventListener("click", function () {
+    document.querySelector("#id").value = "";
     titleUsuario.textContent = "Registrar Usuario";
+    btnAccion.textContent = "Registrar";
+    document.getElementById("passwords").classList.remove("d-none");
+    document.getElementById("frmRegistro").reset();
     $("#usuarioModal").modal("show");
   });
 
@@ -126,7 +131,29 @@ function eliminarUser($idUser) {
           Swal.fire("¡Aviso!", res.msg.toUpperCase(), res.icono);
         }
       };
-      
     }
   });
+}
+
+function editUser($idUser) {
+  const url = base_url + "Usuarios/editar/" + $idUser;
+  const http = new XMLHttpRequest();
+  http.open("GET", url, true);
+  http.send();
+  http.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      //console.log(this.responseText);
+      const res = JSON.parse(this.responseText);
+      document.querySelector("#id").value = res.id;
+      document.querySelector("#nombre").value = res.nombres;
+      document.querySelector("#apellido").value = res.apellidos;
+      document.querySelector("#correo").value = res.correo;
+      // document.querySelector('#contrasena').setAttribute('readonly', 'readonly' );
+      document.querySelector("#passwords").classList.add("d-none");
+      btnAccion.textContent = "Actualizar";
+      $("#usuarioModal").modal("show");
+      titleUsuario.textContent = "Actualizar Usuario";
+      tblUsuarios.ajax.reload();
+    }
+  };
 }

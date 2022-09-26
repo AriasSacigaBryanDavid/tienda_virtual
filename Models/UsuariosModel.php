@@ -20,7 +20,7 @@ class UsuariosModel extends Query
     }
     public function verificarCorreo($correo)
     {
-        $sql = "SELECT correo FROM usuarios WHERE correo = '$correo'";
+        $sql = "SELECT correo FROM usuarios WHERE correo = '$correo' AND estado = 1";
         return $this->selectAll($sql);
     }
     // para eliminar usuario
@@ -28,6 +28,17 @@ class UsuariosModel extends Query
     {
         $sql = "UPDATE usuarios SET estado = ? WHERE id = ? ";
         $array = array(0, $idUser);
+        return $this->save($sql, $array);
+    }
+    public function getUsuario($idUser)
+    {
+        $sql = "SELECT id, nombres, apellidos, correo, perfil FROM usuarios WHERE id = $idUser";
+        return $this->select($sql);
+    }
+    public function modificar($nombre, $apellido, $correo, $id)
+    {
+        $sql = "UPDATE usuarios SET nombres = ?, apellidos = ?, correo = ? WHERE id = ?";
+        $array = array($nombre, $apellido, $correo, $id);
         return $this->save($sql, $array);
     }
 }

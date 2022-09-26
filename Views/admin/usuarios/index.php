@@ -78,6 +78,7 @@
             </div>
             <form id="frmRegistro">
                 <div class="modal-body">
+                    <input type="hidden" id="id" name="id">
                     <div class="form-group mb-4">
                         <label for="nombre">Nombres</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombres">
@@ -91,7 +92,7 @@
                         <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo Electrónico">
                     </div>
 
-                    <div class="row mb-4">
+                    <div class="row mb-4" id="passwords">
                         <div class="col">
                             <div class="form-group mb-4">
                                 <label for="contrasena">Contraseña Nueva</label>
@@ -107,7 +108,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <button type="submit" class="btn btn-primary" id="btnAccion"></button>
                 </div>
             </form>
         </div>
