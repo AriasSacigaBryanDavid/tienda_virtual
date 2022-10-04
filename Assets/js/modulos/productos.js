@@ -1,8 +1,8 @@
-const agregar_Categoria = document.querySelector("#registrar_categoria");
-const frm = document.querySelector("#frmCategoria");
-const titleCategoria = document.querySelector("#titleCategoria");
+const agregar_Producto = document.querySelector("#registrar_producto");
+const frm = document.querySelector("#frmProducto");
+const titleProducto = document.querySelector("#titleProducto");
 const btnAccion = document.querySelector("#btnAccion");
-let tblCategorias;
+let tblProductos;
 document.addEventListener("DOMContentLoaded", function () {
   //carga datos usuarios con DataTables
   // $("#tblUsuarios").DataTable({
@@ -22,16 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
   //   buttons,
   // });
 
-  tblCategorias = $("#tblCategorias").DataTable({
+  tblProductos = $("#tblProductos").DataTable({
     ajax: {
-      url: base_url + "Categorias/listar",
+      url: base_url + "Productos/listar",
       dataSrc: "",
     },
     columns: [
       { data: "id" },
-      { data: "categoria" },
+      { data: "id_categoria" },
+      { data: "nombre" },
+      { data: "descripcion" },
+      { data: "precio" },
+      { data: "cantidad" },
       { data: "imagen" },
-      { data: "accion" }
+      { data: "accion" },
     ],
     dom:
       "<'dt--top-section'<'row'<'col-sm-12 col-md-6 d-flex justify-content-md-start justify-content-center'B><'col-sm-12 col-md-6 d-flex justify-content-md-end justify-content-center mt-md-0 mt-3'f>>>" +
@@ -63,34 +67,42 @@ document.addEventListener("DOMContentLoaded", function () {
     pageLength: 10,
   });
 
+
+  // selectBox = new vanillaSelectBox("#categoria2", {
+  //   keepInlineStyles: true,
+  //   maxHeight: 220,
+  //   minWidth: 600,
+  //   search: true,
+  //   placeHolder: "Categorias",
+  // });
   //abrir modal para registrar usuarios
-  agregar_Categoria.addEventListener("click", function () {
+  agregar_Producto.addEventListener("click", function () {
     document.querySelector("#id").value = "";
     document.querySelector("#imagen_actual").value = "";
     document.querySelector("#imagen").value = "";
-    titleCategoria.textContent = "Registrar Categoría";
+    titleProducto.textContent = "Registrar Producto";
     btnAccion.textContent = "Registrar";
-    document.getElementById("frmCategoria").reset();
-    $("#categoriaModal").modal("show");
+    document.getElementById("frmProducto").reset();
+    $("#productoModal").modal("show");
   });
 
   //formulario submit usuarios
   frm.addEventListener("submit", function (e) {
     e.preventDefault();
     let data = new FormData(this);
-    const url = base_url + "Categorias/registrar";
+    const url = base_url + "Productos/registrar";
     const http = new XMLHttpRequest();
     http.open("POST", url, true);
     http.send(data);
     http.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        // console.log(this.responseText);
+        //console.log(this.responseText);
         const res = JSON.parse(this.responseText);
         if (res.icono == "success") {
           frm.reset();
-          tblCategorias.ajax.reload();
-          $("#categoriaModal").modal("hide");
+          tblProductos.ajax.reload();
           document.querySelector("#imagen").value = "";
+          $("#productoModal").modal("hide");
         }
         alertas(res.msg, res.icono);
       }
@@ -105,7 +117,7 @@ function alertas(msg, icono) {
   });
 }
 
-function eliminarCat($idCat) {
+function eliminarProd($idPro) {
   Swal.fire({
     title: "¿Está seguro?",
     text: "¡No podrás revertir esto!",
@@ -116,7 +128,7 @@ function eliminarCat($idCat) {
     confirmButtonText: "Si, Eliminar!",
   }).then((result) => {
     if (result.isConfirmed) {
-      const url = base_url + "Categorias/delete/" + $idCat;
+      const url = base_url + "Productos/delete/" + $idPro;
       const http = new XMLHttpRequest();
       http.open("GET", url, true);
       http.send();
@@ -125,7 +137,7 @@ function eliminarCat($idCat) {
           //   console.log(this.responseText);
           const res = JSON.parse(this.responseText);
           if (res.icono == "success") {
-            tblCategorias.ajax.reload();
+            tblProductos.ajax.reload();
           }
           // Swal.fire("¡Eliminado!", "Su archivo ha sido eliminado.", "success");
           Swal.fire("¡Aviso!", res.msg.toUpperCase(), res.icono);
@@ -135,8 +147,8 @@ function eliminarCat($idCat) {
   });
 }
 
-function editCat($idCat) {
-  const url = base_url + "Categorias/editar/" + $idCat;
+function editProd($idPro) {
+  const url = base_url + "Productos/editar/" + $idPro;
   const http = new XMLHttpRequest();
   http.open("GET", url, true);
   http.send();
@@ -145,14 +157,19 @@ function editCat($idCat) {
       //console.log(this.responseText);
       const res = JSON.parse(this.responseText);
       document.querySelector("#id").value = res.id;
-      document.querySelector("#categoria").value = res.categoria;
+      document.querySelector("#categoria").value = res.id_categoria;
+      document.querySelector("#producto").value = res.nombre;
+      document.querySelector("#descripcion").value = res.descripcion;
+      document.querySelector("#precio").value = res.precio;
+      document.querySelector("#cantidad").value = res.cantidad;
       document.querySelector("#imagen_actual").value = res.imagen;
       // document.querySelector('#contrasena').setAttribute('readonly', 'readonly' );
-     
+
       btnAccion.textContent = "Actualizar";
-      $("#categoriaModal").modal("show");
-      titleCategoria.textContent = "Actualizar Categoría";
-      tblCategorias.ajax.reload();
+      $("#productoModal").modal("show");
+      titleProducto.textContent = "Actualizar Producto";
+      tblProductos.ajax.reload();
     }
   };
 }
+

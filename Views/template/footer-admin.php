@@ -73,6 +73,11 @@
 <script src="<?php echo BASE_URL; ?>Assets/admin/src/plugins/src/sweetalerts2/sweetalerts2.min.js"></script>
 <!-- <script src="<//?php echo BASE_URL; ?>Assets/admin/src/plugins/src/sweetalerts2/custom-sweetalert.js"></script> -->
 <!-- END THEME GLOBAL STYLE -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <!-- <script src="<//?php echo BASE_URL; ?>Assets/admin/src/plugins/src/vanillaSelectBox/vanillaSelectBox.js"></script> -->
+    <!-- <script src="<//?php echo BASE_URL; ?>Assets/admin/src/plugins/src/vanillaSelectBox/custom-vanillaSelectBox.js"></script> -->
+    <!-- END PAGE LEVEL SCRIPTS -->
 </body>
 
 </html>

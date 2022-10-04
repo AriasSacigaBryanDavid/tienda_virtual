@@ -193,7 +193,7 @@ function vanillaSelectBox(domSelector, options) {
                 { "key": "min-width", "value": "120px" },
                 { "key": "border-radius", "value": "0" },
                 { "key": "width", "value": "100%" },
-                { "key": "text-align", "value": "left" },
+                { "key": "text-align", "value": "center" },
                 { "key": "z-index", "value": "1" },
                 { "key": "color", "value": "#333" },
                 { "key": "background", "value": "white" },

@@ -1,4 +1,5 @@
-selectBox = new vanillaSelectBox("#selectProgrammingLanguage", {
+ selectBox = new vanillaSelectBox("#selectProgrammingLanguage", {
+
     "keepInlineStyles":true,
     "maxHeight": 200,
     "minWidth":210,
